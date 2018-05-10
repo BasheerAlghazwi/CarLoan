@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.carloan.MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello customers!"
+        android:textSize="30sp"
+        android:textColor="#00F"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/title" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/LCC"
+        android:layout_below="@id/title">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Car Coast: "
+        android:layout_below="@id/title"
+        android:textSize="20sp"
+        android:id="@+id/CC"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text="  "
+        android:inputType="numberDecimal"
+        android:id="@+id/ECC"
+        android:textSize="20sp"
+        android:imeOptions="actionDone"
+        android:layout_toRightOf="@+id/CC"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/LDP"
+        android:layout_below="@id/LCC">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" Down Payment: "
+        android:textSize="20sp"
+        android:layout_below="@id/CC"
+        android:id="@+id/dx"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ED"
+        android:inputType="numberDecimal"
+        android:layout_toRightOf="@+id/d"
+        android:layout_below="@id/CC"
+        android:text="  "
+        android:imeOptions="actionDone"
+        android:textSize="20sp"
+        />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/LAPR"
+        android:layout_below="@+id/LDP">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="APR :"
+        android:id="@+id/apr"
+        android:layout_below="@+id/LDP"
+        android:textSize="20sp"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Eapr"
+        android:text=" "
+        android:inputType="numberDecimal"
+        android:layout_below="@+id/LDP"
+        android:imeOptions="actionDone"
+        android:layout_toRightOf="@+id/apr"/>
+
+    </LinearLayout>
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/RG"
+        android:layout_below="@+id/LAPR"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Loan  "
+            android:textSize="20sp"
+            android:id="@+id/loan"
+
+            android:layout_below="@id/LAPR"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/loan"
+            android:id="@+id/lease"
+            android:layout_centerHorizontal="true"
+            android:text="Lease"
+            android:textSize="20sp"/>
+
+    </RadioGroup>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekPersntage"
+        android:layout_below="@+id/RG"
+        android:layout_centerHorizontal="true"
+        android:text="Months remains"/>
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sek"
+        android:textAlignment="center"
+        android:layout_below="@+id/seekPersntage"
+        android:max="36"
+        android:min="1"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Calculate"
+        android:id="@+id/cal"
+        android:layout_below="@+id/sek"
+        android:onClick="calcu"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/monp"
+        android:text="Monthly Payment:"
+        android:textSize="20sp"
+        android:layout_below="@+id/cal"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/EMp"
+        android:layout_below="@+id/monp"
+        android:text="$ "
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        />
+
+</RelativeLayout>
